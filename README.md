@@ -21,5 +21,5 @@ There's also a grid of scatter plots for the main number columns.
 # Limitations:
 ## Scanned PDFs: no text comes out, because there's no text recognition.
 ## Old .doc files: these need to be saved as .docx first.
-## Spatial analysis: your brief mentions it, but it isn't included.
-## Charts: they're built into the app; it doesn't use the Python or R tools listed in the brief.
+## Spatial analysis: is not included.
+## Charts: they're built into the app; it doesn't use the Python or R tools required for the analysis.
