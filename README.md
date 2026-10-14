@@ -16,10 +16,10 @@ There's also a grid of scatter plots for the main number columns.
 ## Feature selection: which columns look most useful for modelling, which to consider dropping and why, and suggested clean-up steps (filling gaps, fixing skew, handling outliers, encoding categories).
 ## Documents (PDF, Word, text): word and sentence counts, a readability score, top keywords and phrases, plus any tables found inside Word files.
 ## Multiple files: a side-by-side comparison of all tables, with shared column names flagged as possible ways to link them.
-## Export: you can download the report as a Markdown file.
+## Export: you can download the report as a Markdown file or download a report PDF.
 
 # Limitations:
 ## Scanned PDFs: no text comes out, because there's no text recognition.
 ## Old .doc files: these need to be saved as .docx first.
-## Spatial analysis: is not included.
+## Spatial analysis: is now included.
 ## Charts: they're built into the app; it doesn't use the Python or R tools required for the analysis.
