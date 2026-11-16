@@ -1,7 +1,9 @@
-# Data-Profiler
-Understand any dataset in seconds.
-https://dataprofiler.app/
-<img width="1902" height="913" alt="image" src="https://github.com/user-attachments/assets/cb1bd4ff-d30f-4861-af9c-0ab845314ca9" />
+# Data Profiler
+
+Understand any dataset in seconds.  
+[https://dataprofiler.app](https://dataprofiler.app)
+
+<img width="1920" height="973" alt="Data Profiler" src="https://github.com/user-attachments/assets/0d608973-7bd5-498d-a026-8b3f9b6f0a5b" />
 
 # Exploratory Data Analysis (EDA) Studio
 
@@ -13,106 +15,130 @@ Upload single or multiple files in virtually any common format. The app cleans, 
 
 ## What this app is about
 
-Exploratory Data Analysis (EDA) is usually the most time-consuming phase of any data project. Analysts typically have to write hundreds of lines of Python or R code just to check distributions, find correlations, verify assumptions, and spot data quality problems.
+Exploratory Data Analysis (EDA) is usually the most time-consuming phase of any data project. Analysts often write hundreds of lines of boilerplate code in Python or R just to inspect distributions, find correlations, verify assumptions, and spot data quality issues.
 
-This app automates that entire initial cycle. You drop in your data files, and it immediately computes statistical summaries, runs hypothesis tests, maps coordinates, highlights risks, and explains what the numbers mean—without writing a single line of code.
+Data Profiler automates that entire initial discovery phase. Drop in your data files, and it immediately computes statistical summaries, runs hypothesis tests, maps coordinates, highlights data risks, and explains what the numbers mean in both novice-friendly plain English and data-science technical views—without writing a single line of code.
 
 ---
 
 ## What it can do
 
 - **Reads 11+ formats**: CSV, TSV, Excel (`.xlsx`, `.xls`), Parquet, Feather/Arrow, JSON, JSON Lines, SQL dumps, XML, text documents, Word (`.docx`), PDF, and `.zip` archives.
-- **Big data ready**: Uses streaming chunking and reservoir sampling to smoothly process files with hundreds of thousands or millions of rows (tested up to 1.5M+ rows) without freezing your browser.
-- **Analyzes tables and text**: Profiles structured tabular data as well as unstructured text and documents.
-- **Evaluates data relationships**: Computes correlations, bivariate comparisons, normality tests, and PCA dimensionality reduction.
-- **Includes spatial analysis**: Automatically detects latitude/longitude coordinates to produce point density maps, hotspot clusters, and spatial autocorrelation scores.
-- **Generates executive deliverables**: Lets you ask AI questions about your data, produces a "Four Types of Analytics" briefing, and exports everything to formatted PDF or Markdown.
+- **Strict full-dataset evaluation**: Evaluates 100% of your records with zero silent downsampling. If a file exceeds browser memory, the app provides explicit splitting instructions to preserve every row.
+- **Profiles tables and documents**: Handles structured relational tables as well as unstructured text documents.
+- **Evaluates data relationships**: Computes centered Pearson and Spearman correlations, cross-tabulations, normality tests, and PCA dimensionality reduction.
+- **Includes spatial analysis**: Detects latitude and longitude coordinates to produce point density maps, hotspot clusters, and spatial autocorrelation metrics (Moran's I, Nearest Neighbor Index).
+- **Interactive 3-level visual drill-downs**: Click any chart or data mark across views to open a pop-up drill down with breadcrumb history, breakdown selectors, and matching raw records.
+- **Domain & governance recognition**: Automatically recognizes column patterns across 41 industry and governance domains with built-in healthcare privacy notices.
+- **DIY exploratory tools**: Global Focus filters, custom arithmetic column formulas evaluated over complete records, and saved-view libraries.
+- **Executive & white-label exports**: Download publisher-branded executive dossiers (PDF, Markdown, Excel/CSV) or generate white-label customized reports with your own logo and company branding.
+- **Two-way BI Hub interoperability**: Direct handoff and session compatibility with Business Intelligence Hub.
 
 ---
 
 ## What to expect from this app
 
-1. **Private by default**: Your raw files stay on your machine. Data parsing, math, charts, and statistics run entirely client-side in your browser.
-2. **Instant diagnostics**: Within seconds of uploading, you get clear warnings about missing fields, skewed columns, duplicates, and data leakage risks.
-3. **Actionable guidance**: Rather than just showing numbers, the app tells you *why* a column might be problematic and suggests concrete cleanup and feature-selection steps.
-4. **No software installation**: Runs straight from any modern web browser—no Python, R, Jupyter notebooks, or SQL database setup required.
+1. **Private by default**: Raw files never leave your machine. Parsing, arithmetic, charting, and statistical tests execute entirely client-side in your browser.
+2. **Instant diagnostics**: Within seconds of loading, get clear warnings about missing fields, skewed columns, duplicates, and data leakage risks.
+3. **Actionable, data-grounded guidance**: Recommendations and insights are strictly derived from your loaded records, avoiding generic assumptions.
+4. **Plain English & Technical Views**: Toggle between clear business explanations and rigorous statistical language.
+5. **No software installation**: Runs straight from any modern browser—no Python, R, Jupyter notebooks, or database servers required.
 
 ---
 
 ## What each report covers
 
 ### Overview and data quality
-- Row and column counts, dataset memory size, and file format details.
-- Missing values count and percentage across every column.
-- Duplicate row detection.
-- Proactive quality alerts for empty columns, highly skewed values, uniform/zero-variance fields, or excessive missingness.
+- Row and column counts, dataset memory size, and file format metadata.
+- Missing values count and percentage across every column with clear conversion diagnostics.
+- Duplicate row detection and constant/zero-variance column alerts.
+- Inferred subject domain recognition and data dictionary summaries.
 
 ### Univariate analysis
-- A histogram, box plot, and full summary statistics for each column (Mean, Median, Standard Deviation, IQR, Min, Max, Skewness, Kurtosis).
-- Outlier counts and ranges detected via IQR boundaries.
-- Most frequent values and cardinality percentages for category columns.
-- Timelines, date spans, and frequency trends for date/time columns.
+- Histograms, box plots, and complete descriptive statistics (Mean, Median, Sample Standard Deviation, IQR, Min, Max, Skewness, Kurtosis).
+- Outlier detection via IQR boundaries with affected-record inspection.
+- Cardinality percentages and top value distributions for categorical columns.
+- Timelines, date spans, and frequency trends for temporal columns.
 
 ### Bivariate analysis
-Pick any two columns to explore how they interact:
-- **Two number columns**: Scatter plot with an automatic trend line, plus both Pearson (linear) and Spearman (rank) correlation scores.
-- **Two category columns**: Contingency cross-tabulation table with a Chi-Square test of independence to see whether they are significantly related.
-- **A category and a number**: Group averages, distributions, and a test (t-test / ANOVA) showing whether the group averages differ meaningfully.
-- **Correlation grid**: A full correlation matrix and pairwise scatter plot grid for all key numerical fields.
+- **Two numeric columns**: Scatter plot with automatic trend lines, centered Pearson correlation, and Spearman rank scores.
+- **Two categorical columns**: Contingency cross-tabulation table with Chi-Square test of independence.
+- **Category vs. numeric**: Group distributions and ANOVA / t-test comparisons showing group separation.
+- **Correlation matrix**: High-performance correlation heatmap and pairwise scatter plot matrices.
 
-### Assumptions
-- Two normality tests for each numerical column (skewness/kurtosis ratios and Gaussian goodness-of-fit).
-- Interactive Q–Q (Quantile-Quantile) plots comparing your data against a theoretical normal bell curve.
-- Checks for monotonic relationships that are consistent but not straight lines.
+### Assumptions & reliability
+- Skewness/kurtosis ratios, normality diagnostics, and Kolmogorov-Smirnov distance metrics.
+- Interactive Q–Q (Quantile-Quantile) plots comparing empirical data against theoretical Gaussian distributions.
+- Monotonicity and variance consistency checks.
 
 ### Multivariate (PCA)
-- Principal Component Analysis running on all standardized numeric columns.
-- Scree plot showing how much of the total dataset variance the first few combined dimensions capture.
-- 2D scatter projection (biplot) mapping your data points across the principal components.
-- Component loadings table detailing how much each original column contributes to each component.
+- Principal Component Analysis over standardized numeric columns.
+- Scree plot highlighting explained variance ratios across components.
+- 2D biplot projection mapping individual records along principal axes.
+- Component loadings matrix detailing original variable contributions.
 
 ### Spatial analysis
-- Automatic detection of latitude and longitude coordinate columns (or manual selection).
-- Centroid (geographic center point) and bounding box spatial extent.
-- Interactive point distribution map and 2D spatial density grid highlighting geographic hotspots.
-- Spatial autocorrelation tests: **Moran’s I** (clustered vs. dispersed vs. random) and **Nearest Neighbor Index (NNI)**.
+- Automatic coordinate detection (Latitude/Longitude) or manual column assignment.
+- Geographic centroid and bounding-box spatial coverage.
+- Interactive point distribution maps and 2D spatial density hotspot grids.
+- Spatial autocorrelation tests: **Moran’s I** and **Nearest Neighbor Index (NNI)**.
 
-### Feature selection
-- Recommendations on which columns look most useful for downstream predictive modeling.
-- Clear flags on which columns to consider dropping and why (e.g., constant columns, unique identifier leaks, collinear pairs with \(|r| > 0.85\)).
-- Suggested cleanup steps: strategies for imputing missing values, transformations to fix skew, outlier capping, and categorical encoding.
+### Feature selection & modeling readiness
+- Identification of informative columns for downstream machine learning.
+- Dropping recommendations (e.g., constant fields, unique ID leakage, collinear pairs with \(|r| > 0.85\)).
+- Data cleaning playbooks: imputation guidance, skew transformations, and categorical encoding advice.
 
-### Dual AI Intelligence
-- **AI Insights**: Ask specific questions or provide business context; the model highlights non-obvious patterns, flags subtle risks, and recommends next analytical steps.
-- **Four Types of Analytics Report**: Automatically structures your data into the four classic analytical pillars:
-  - *Descriptive*: What happened in this dataset?
-  - *Diagnostic*: Why did it happen (root drivers and anomalies)?
-  - *Predictive*: What patterns or trends are likely to continue?
-  - *Prescriptive*: What concrete actions should be taken (tagged with priority and confidence)?
+### Four Types of Analytics & AI Analyst
+- **Descriptive**: What happened in this dataset?
+- **Diagnostic**: Why did it happen (drivers, correlations, anomalies)?
+- **Predictive**: What patterns or historical trends are likely to continue?
+- **Prescriptive**: What concrete actions should be taken, ranked by confidence and priority?
+- **AI Analyst**: Contextual question-answering with prompt suggestions and narrative summaries.
 
 ### Documents (PDF, Word, text)
 - Word, sentence, and character counts.
 - Readability scores (Flesch Reading Ease and Flesch-Kincaid Grade Level).
-- Lexical diversity (vocabulary richness) and top frequent keywords and n-gram phrases.
-- Document structure breakdown, including page estimates and extraction of tables found inside Word documents.
+- Lexical diversity (vocabulary richness) and top n-gram phrase frequencies.
+- Structural analysis including page estimates and embedded table extraction from Word documents.
 
-### Multiple files
-- Side-by-side comparison of all uploaded tables.
-- Automatic schema comparison showing matching vs. differing column sets.
-- Shared column names flagged as potential keys to join or link files together.
-- One-click merging when files share the exact same schema.
+### Multiple files & comparison
+- Side-by-side comparison of schema structures across uploaded tables.
+- Automatic detection of shared keys and join opportunities.
+- One-click merging when schemas match identically.
 
-### Export
-- **Download PDF**: A multi-page, formatted executive dossier containing overview stats, data dictionaries, correlation tables, normality checks, alerts, and the full AI narrative.
-- **Download Markdown**: A clean `.md` document ready for GitHub, Notion, or internal wikis.
+### Exporting & sharing
+- **Executive PDF**: Multi-page report containing statistical tables, charts, alerts, and analytical findings.
+- **Markdown & Excel/CSV**: Clean `.md` exports for documentation tools and full-row workbooks for spreadsheet analysis.
+- **Customized White-Label Reports**: Client-branded PDF/HTML exports stripped of all application branding.
+- **BI Hub Sessions**: Seamless export and import for Business Intelligence Hub.
 
 ---
 
-## Limitations
+## 16 Built-in Sample Dataset Models
 
-- **Scanned PDFs**: Text cannot be extracted from scanned image-only PDFs because the app does not currently include optical character recognition (OCR).
-- **Old `.doc` files**: Legacy Word binary files are not supported directly; they need to be saved as modern `.docx` format first.
-- **Device memory limits**: Very large datasets (e.g., >500,000 rows) are automatically sampled using statistical reservoir sampling to keep your browser tab fast and prevent out-of-memory crashes.
-- **Encrypted files**: Password-protected spreadsheets or encrypted PDFs must have passwords removed before uploading.
-- **Offline AI**: Core statistics, charts, spatial metrics, and exports work completely offline, but AI narrative features require an internet connection.
-- **Built-in charts**: Visualizations are rendered natively in the browser via Web standards; the app does not run or require external Python (`matplotlib`/`seaborn`) or R (`ggplot2`) environments.
+Explore full platform capabilities immediately using deterministic 1,200-row sample datasets across 16 domains:
+- Finance & Banking
+- Healthcare & Clinical
+- E-commerce & Retail
+- Cybersecurity & Threat Intel
+- Space & Aviation
+- Industrial Manufacturing
+- Bio Sciences & Genetics
+- Geospatial & Urban Planning
+- Food & Tourism
+- Media & Entertainment
+- Corporate Governance
+- Human Resources
+- Business Analysis
+- System Analysis & Operations
+- Environment & Climate
+- Mining & Extraction
+
+---
+
+## Technical limitations & file handling
+
+- **Scanned PDFs**: Text cannot be extracted from image-only scanned PDFs (no optical character recognition / OCR).
+- **Legacy `.doc` files**: Binary Word documents must be saved in modern `.docx` format before uploading.
+- **Complete-data memory limits**: Large datasets that exceed available browser memory are not silently sampled; the app prompts you to split the file without losing records.
+- **Encrypted files**: Password-protected spreadsheets or PDFs must have security removed prior to upload.
